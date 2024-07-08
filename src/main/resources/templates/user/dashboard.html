@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlnp="http://www.thymeleaf.org" th:replace= "base::layout(~{::section},~{::title})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${signedInUser.name}+' | Dashboard'"></title>
+</head>
+<body>
+   <section>
+    <div th:if="${signedInUser}">
+        <div th:replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+    
+    <div class="pl-64 pt-20" style="height: 1000px">
+        <div class="flex justify-center flex-col items-center" >
+            <h1 class="text-5xl">This is user Dashboard page....</h1>
+        <h2 th:text="${signedInUser.name}"></h2>
+        <h2 th:text="${signedInUser.email}"></h2>
+        <a th:href="@{'/logout'}">LogOut</a>
+        </div>
+    </div>
+    
+   </section>
+</body>
+</html>
