@@ -72,6 +72,7 @@ async function loadContactData(id){
         openContactModal();
     }catch(error){
         console.log("Error : ", error);
+        
     }
    
 }
