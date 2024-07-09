@@ -57,6 +57,18 @@ async function loadContactData(id){
         console.log(data.name);
         document.querySelector("#contact_name").innerHTML=data.name;
         document.querySelector("#contact_email").innerHTML=data.email;
+        document.querySelector("#contact_phoneNumber").innerHTML=data.phoneNumber;
+        document.querySelector("#contact_image").src=data.picture;
+        document.querySelector("#contact_address").innerHTML=data.address;
+        document.querySelector("#contact_about").innerHTML=data.description;
+        document.querySelector("#contact_website").innerHTML=data.websiteLink;
+        document.querySelector("#contact_linkedIn").innerHTML=data.linkedInLink;
+        const favoriteContact = document.querySelector("#contact_favorite");
+        if(data.favorite){
+            favoriteContact.innerHTML="<i class='fa-solid fa-star w-6 h-6'></i><i class='fa-solid fa-star w-6 h-6'></i><i class='fa-solid fa-star w-6 h-6'></i>";
+        }else{
+            favoriteContact.innerHTML="Not Favorite Contact";
+        }
         openContactModal();
     }catch(error){
         console.log("Error : ", error);

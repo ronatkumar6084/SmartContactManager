@@ -218,9 +218,10 @@ public class ContactController {
 
         var updatedCon = contactService.updateContact(con);
         logger.info("updated contact {}", updatedCon);
-        httpSession.setAttribute("message", 
-              Message.builder()
-              .content("Contact Updated").type(MessageType.green)
+               httpSession.setAttribute("message", 
+               Message.builder()
+              .content("Contact Updated")
+              .type(MessageType.green)
               .build());
         return "redirect:/user/contacts/view/" + contactId;
     }
