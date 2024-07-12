@@ -55,6 +55,9 @@ public class SecurityConfig {
     @Autowired
     private SecurityCustomUserDetailService userDetailService;
 
+    @Autowired
+    private AuthFailureHandler authFailureHandler;
+
     //configuration of authentication using spring security
     @Bean
     public AuthenticationProvider authenticationProvider()
@@ -113,6 +116,8 @@ public class SecurityConfig {
             //     }
                 
             // });
+
+            formLogin.failureHandler(authFailureHandler);
         });
         
         httpSecurity.csrf(AbstractHttpConfigurer::disable);

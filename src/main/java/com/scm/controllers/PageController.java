@@ -109,6 +109,7 @@ public class PageController {
         user.setPassword(userForm.getPassword());
         user.setAbout(userForm.getPassword());
         user.setPhoneNumber(userForm.getPhoneNumber());
+        user.setEnabled(false);
 
         User savedUser = userService.saveUser(user);
         System.out.println("User Saved."+savedUser);
