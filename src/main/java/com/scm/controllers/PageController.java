@@ -29,7 +29,7 @@ public class PageController {
     public String home(Model model)
     {
         model.addAttribute("title", "Home Page");
-        model.addAttribute("name", "SPringBoot Technology");
+        model.addAttribute("name", "SpringBoot Technology");
         model.addAttribute("githubRepo", "https://github.com/ronatkumar6084");
         System.out.println("Home Page Handler");
         return "home";
@@ -110,6 +110,7 @@ public class PageController {
         user.setAbout(userForm.getPassword());
         user.setPhoneNumber(userForm.getPhoneNumber());
         user.setEnabled(false);
+        user.setProfilePic("https://www.learncodewithdurgesh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdurgesh_sir.35c6cb78.webp&w=1920&q=75");
 
         User savedUser = userService.saveUser(user);
         System.out.println("User Saved."+savedUser);
@@ -124,3 +125,5 @@ public class PageController {
     }
 
 }
+
+//https://media.licdn.com/dms/image/D5635AQEUDzUWjqFrHw/profile-framedphoto-shrink_200_200/0/1704266259018?e=1722232800&v=beta&t=rEz9S3D2x4MKIYedC8v97keZRrTaoAb8UyTEfV0QXVY

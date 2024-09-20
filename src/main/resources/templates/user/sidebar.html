@@ -1,8 +1,15 @@
 <aside  th:fragment="sidebar" id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-       <a href="https://flowbite.com/" class="flex items-center ps-2.5 mb-5">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />
+       <a href="https://flowbite.com/" class="flex flex-col items-center ps-2.5 mb-9">
+         <!-- th:src="@{${signedInUser.profilePic}}" -->
+         <img 
+           onerror="this.onerror=null; this.src='http://flowbite.com/docs/images/logo.svg'"
+          src="https://media.licdn.com/dms/image/D5635AQEUDzUWjqFrHw/profile-framedphoto-shrink_200_200/0/1704266259018?e=1722240000&v=beta&t=Iy_p9kqkSF4wTK9LH5cEp8Nlr_p_At-WEKzHjIGDjFg"
+          class="h-16 me-3 sm:h-12 rounded-full shadow-md" 
+          alt="Flowbite Logo" />
+          <span class="text-gray-500" th:text="${signedInUser.name}"></span>
           <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Welcome to SCM</span>
+          
        </a>
        <ul class="space-y-2 font-medium">
           <li>
@@ -47,7 +54,7 @@
                 <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
                 </svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
+                <span class="flex-1 ms-3 whitespace-nowrap">Sign Out</span>
              </a>
           </li>
           <li>

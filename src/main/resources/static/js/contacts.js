@@ -92,3 +92,13 @@ async function deleteContact(id){
         } 
       });
 }
+
+ function exportData(){
+    alert("working")
+    TableToExcel.convert(document.getElementById("contact-table"), {
+        name: "table1.xlsx",
+        sheet: {
+          name: "Sheet 1"
+        }
+      });
+}

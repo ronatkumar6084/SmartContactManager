@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlnp="http://www.thymeleaf.org" th:replace= "base::layout(~{::section},~{::title})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+  
+</head>
+<body>
+  <section class="pt-20 text-center md:w-1/2 mx-auto" >
+    <div>
+        <div th:replace="message :: messagebox"></div>
+        <a th:href="@{/signin}" class="bg-gray-900 mt-2 text-white px-3 py-2 border rounded-lg">Signin</a>
+    </div> 
+  </section> 
+</body>
+</html>
